@@ -1,16 +1,49 @@
+<?xml version="1.0"?>
 <odoo>
     <data>
 
-        <record id="website_helpdesk_ticket_submit_form_custom" model="ir.ui.view">
-            <field name="name">Helpdesk: Submit a Ticket Form custom</field>
-            <field name="inherit_id" ref="website_helpdesk_form.team_form_1"/>
-            <field name="arch" type="xml">
-                <xpath expr="//div[@class='form-group col-12 s_website_form_field s_website_form_dnone']" position="after">
-
-                    <p>DEMO FIELD</p>
-                </xpath>
-            </field>
+        <record id="website_time_off_menu" model="website.menu">
+            <field name="name">Mesa de ayuda</field>
+            <field name="url">helpdesk</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">55</field>
         </record>
+
+<!--        <record id="website_helpdesk_ticket_submit_form_custom" model="ir.ui.view">-->
+<!--            <field name="name">Helpdesk: Submit a Ticket Form custom</field>-->
+<!--            <field name="inherit_id" ref="website_helpdesk_form.team_form_6"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//div[@class='form-group col-12 s_website_form_field s_website_form_model_required']" position="after">-->
+
+<!--                    <div data-visibility-condition="" data-visibility-between="" class="form-group s_website_form_field col-12" data-type="many2one" data-name="Field">-->
+<!--                        <div class="row s_col_no_resize s_col_no_bgcolor">-->
+<!--                          <label class="col-form-label col-sm-auto s_website_form_label " style="width: 200px" for="ln7lhxy3zpf">-->
+<!--                            <span class="s_website_form_label_content">Familia</span>-->
+<!--                          </label>-->
+<!--                          <div class="col-sm">-->
+<!--                            <select class="form-control s_website_form_input" name="x_family" id="ln7lhxy3zpf" style="">-->
+<!--                              <option value="15">ACCESORIOS</option>-->
+<!--                              <option value="16">ÁREAS COMUNES</option>-->
+<!--                              <option value="17">ELÉCTRICOS</option>-->
+<!--                              <option value="18">EQUIPOS DE CONSUMO</option>-->
+<!--                              <option value="19">HERRAMIENTAS</option>-->
+<!--                              <option value="20">INSUMOS</option>-->
+<!--                              <option value="21">LICENCIAMIENTO</option>-->
+<!--                              <option value="22">MOBILIARIO</option>-->
+<!--                              <option value="23">REDES</option>-->
+<!--                              <option value="24">SISTEMA DE SEGURIDAD</option>-->
+<!--                              <option value="25">SISTEMAS DE VENTILACIÓN</option>-->
+<!--                              <option value="26">SST CLIENTE</option>-->
+<!--                              <option value="27">SST(INTERNO)</option>-->
+<!--                              <option value="28">TECNOLOGÍA</option>-->
+<!--                            </select>-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+
 
     </data>
 </odoo>

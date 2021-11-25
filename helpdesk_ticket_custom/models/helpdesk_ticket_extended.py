@@ -16,3 +16,4 @@ class helpdesk_ticket_extended(models.Model):
     def _domain_ochange_x_familia(self):
         return{'domain': {'x_sub_group': [('x_family', "=", self.x_family.id)]}}
 
+
