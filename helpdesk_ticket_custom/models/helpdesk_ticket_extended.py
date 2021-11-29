@@ -5,7 +5,6 @@ from odoo import models, fields, api, exceptions
 class helpdesk_ticket_extended(models.Model):
     _inherit = 'helpdesk.ticket'
 
-    partner_id = fields.Many2one('res.partner', string="Customer", readonly=True)
     x_visibility_related = fields.Boolean(string='Campo oculto', related='team_id.x_visibility', store=True, readonly=True)
     x_classification = fields.Many2one(comodel_name='helpdesk_classification', string='clasificación')
     x_project = fields.Many2one(comodel_name='helpdesk_project', string='Proyecto', required="True")
@@ -21,6 +20,7 @@ class helpdesk_ticket_extended(models.Model):
     @api.onchange('partner_id')
     def _domain_ochange_x_familia(self):
         return {'domain': {'x_project': [('partner_id', "=", self.partner_id.id)]}}
+
 
 
 
