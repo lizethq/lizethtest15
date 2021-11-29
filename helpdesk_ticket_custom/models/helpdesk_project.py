@@ -8,8 +8,7 @@ class helpdesk_project(models.Model):
 
     name = fields.Char(string='Nombre', required="True")
     x_code = fields.Char(string='Codigo', required="True")
-    # x_account_analytic = fields.Many2one(comodel_name='account.analytic.account', string='Cuenta analítica', required="True")
-    # x_code_analytic = fields.Char(string='Cuenta Analitica', store=True, related="x_account_analytic.code")
+    partner_id = fields.Many2many(comodel_name='res.partner', relation='x_helpdesk_project_res_partner_rel', column1='helpdesk_project_id', column2='res_partner_id', string='Compañias')
 
     # Restricción a nivel de SQL
     _sql_constraints = [
@@ -23,11 +22,3 @@ class helpdesk_project(models.Model):
             name = rec.name + ' [ ' + rec.x_code + ' ]'
             result.append((rec.id, name))
         return result
-
-    # # Permite concatenar el name y la cuenta an analitica
-    # def name_get(self):
-    #     result = []
-    #     for rec in self:
-    #         name = rec.name + ' [' + rec.x_code_analytic + ']'
-    #         result.append((rec.id, name))
-    #     return result

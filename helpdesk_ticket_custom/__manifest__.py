@@ -35,6 +35,7 @@
                 'industry_fsm',
                 'account_accountant',
                 'website_helpdesk_form',
+                'contacts',
                 ],
 
     # always loaded
@@ -47,7 +48,7 @@
         'views/views_helpdesk_task_extended.xml',
         'views/views_helpdesk_team_extended.xml',
         'views/views_helpdesk_ticket_extended.xml',
-        'views/views_helpdesk_users_extended.xml',
+        'views/views_helpdesk_partner_extended.xml',
     ],
 
     'installable': True,
