@@ -14,8 +14,7 @@ class helpdesk_partner_extended(models.Model):
 
     @api.onchange('x_ticket_show', 'x_project')
     def _domain_depends_x_project(self):
-        if self.is_company == False:
-            return {'domain': {'x_project': [('partner_id', "in", self.parent_id.id)]}}
+        return {'domain': {'x_project': [('partner_id', "in", self.parent_id.id)]}}
 
 
 
